@@ -28,8 +28,9 @@ public class UserDaoImpl implements UserDao{
 		query.setParameter(0,userEntity.getUsername());
 		List list = query.list();
 		int i=list.size();
-		if(i==0)
-		return (int) session.save(userEntity);
+		if(i==0) {
+			System.out.println("registerUser");
+		return (int) session.save(userEntity);}
 		else
 		return 0;	
 	}
