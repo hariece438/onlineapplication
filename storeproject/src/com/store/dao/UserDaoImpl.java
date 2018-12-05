@@ -23,6 +23,7 @@ public class UserDaoImpl implements UserDao{
 	public int registerUser(UserEntity userEntity) {
 		Session session=sessionFactory.getCurrentSession();
 		String SQL_QUERY =" from UserEntity as o where o.username=?";
+		System.out.println("registerUser");
 		Query query = session.createQuery(SQL_QUERY);
 		query.setParameter(0,userEntity.getUsername());
 		List list = query.list();
